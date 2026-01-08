@@ -17,6 +17,8 @@ export class Flight {
     this.regularTicketPrice = regularTicketPrice;
     this.VIPTicketPrice = VIPTicketPrice;
     this.ticketsList = [];
+    this.baggages = [];
+    this.maximumTotalBaggageWeight = maximumNumberOfpassengers * 20;
   }
 
   buyRTicket(passengers) {
@@ -76,5 +78,17 @@ export class Flight {
       regular:
         res.regular >= this.maximumNumberOfpassengers * 0.9 ? false : true,
     };
+  }
+
+  // עצרתי כי החלטתי לעבור על מה שכן עשיתי 
+  addBaggage(baggage) {
+    let sumOfBaggage = this.baggages.reduce((total, num) => {
+      return total + Math.round(num.weight);
+    }, 0);
+    if (sumOfBaggage >= this.maximumTotalBaggageWeight) {
+      console.log("We have reached the maximum weight.");
+      return false;
+    }
+    const passenger = this.ticketsList.find(ticket=> ticket.ownerName === baggage.ownerId)
   }
 }

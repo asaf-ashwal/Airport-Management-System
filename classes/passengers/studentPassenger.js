@@ -1,10 +1,9 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import { FatherPassenger } from "./FatherPassenger.js";
 
-export class StudentPassenger {
+export class StudentPassenger extends FatherPassenger {
   constructor(name, amountOfMoney, schoolOrUniversityName) {
-    this.name = name;
-    this.idNumber = uuidv4();
-    this.amountOfMoney = amountOfMoney;
+    super(name, amountOfMoney);
     this.schoolOrUniversityName = schoolOrUniversityName;
   }
   buyTicket(price) {

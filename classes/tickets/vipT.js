@@ -1,10 +1,8 @@
-import { v4 as uuidv4 } from "uuid";
+import { RegularTicket } from "./rticket.js";
 
-export class VIPTicket {
+export class VIPTicket extends RegularTicket{
   constructor(price, ownerName) {
-    this.ticketNumber = uuidv4();
-    this.price = price;
-    this.ownerName = ownerName;
+    super(price,ownerName)
     this.benefitsList = ["Free alcohol", "Free food", "Hot towels"];
   }
 }
