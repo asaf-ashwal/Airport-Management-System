@@ -80,7 +80,7 @@ export class Flight {
     };
   }
 
-  // עצרתי כי החלטתי לעבור על מה שכן עשיתי 
+  // עצרתי כי החלטתי לעבור על מה שכן עשיתי
   addBaggage(baggage) {
     let sumOfBaggage = this.baggages.reduce((total, num) => {
       return total + Math.round(num.weight);
@@ -89,6 +89,8 @@ export class Flight {
       console.log("We have reached the maximum weight.");
       return false;
     }
-    const passenger = this.ticketsList.find(ticket=> ticket.ownerName === baggage.ownerId)
+    const passenger = this.ticketsList.find(
+      (ticket) => ticket.ownerName === baggage.ownerId
+    );
   }
 }

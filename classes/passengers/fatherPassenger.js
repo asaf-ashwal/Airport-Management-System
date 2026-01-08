@@ -5,6 +5,5 @@ export class FatherPassenger {
     this.name = name;
     this.idNumber = uuidv4();
     this.amountOfMoney = amountOfMoney;
-
   }
 }

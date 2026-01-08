@@ -2,9 +2,8 @@ import { v4 as uuidv4 } from "uuid";
 import { FatherPassenger } from "./FatherPassenger.js";
 
 export class RegularPassenger extends FatherPassenger {
-
   constructor(name, amountOfMoney, workPlace, knowsAnAirportEmployee) {
-    super(name,amountOfMoney)
+    super(name, amountOfMoney);
     this.workPlace = workPlace;
     this.knowsAnAirportEmployee = knowsAnAirportEmployee;
   }
