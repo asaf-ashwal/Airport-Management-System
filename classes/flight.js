@@ -81,6 +81,7 @@ export class Flight {
   }
 
   // עצרתי כי החלטתי לעבור על מה שכן עשיתי
+  // נשאר לי לבדוק איזה סוג המטען ולתמחר 
   addBaggage(baggage, passenger) {
     let sumOfBaggage = this.baggages.reduce((total, num) => {
       return total + Math.round(num.weight);
