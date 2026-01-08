@@ -81,7 +81,7 @@ export class Flight {
   }
 
   // עצרתי כי החלטתי לעבור על מה שכן עשיתי
-  addBaggage(baggage) {
+  addBaggage(baggage, passenger) {
     let sumOfBaggage = this.baggages.reduce((total, num) => {
       return total + Math.round(num.weight);
     }, 0);
@@ -89,8 +89,19 @@ export class Flight {
       console.log("We have reached the maximum weight.");
       return false;
     }
-    const passenger = this.ticketsList.find(
-      (ticket) => ticket.ownerName === baggage.ownerId
+    const passengerTicket = this.ticketsList.find(
+      (ticket) => ticket.ownerName === baggage.ownerName
     );
+    if (!passengerTicket) {
+      console.log("Passenger dont buy ticket yet.");
+      return false;
+    }
+    const price = 0;
+    const userBuy = passenger.buyTicket(price);
+    if (!userBuy) {
+      console.log("Passenger dont have egnoph mony.");
+      return false;
+    }
+    this.baggages.push(baggage);
   }
 }
